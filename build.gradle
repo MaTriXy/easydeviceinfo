@@ -18,22 +18,44 @@
 
 buildscript {
   repositories {
+    google()
     jcenter()
   }
   dependencies {
-    classpath 'com.android.tools.build:gradle:2.1.0'
+    classpath 'com.android.tools.build:gradle:3.0.1'
 
     // NOTE: Do not place your application dependencies here; they belong
     // in the individual module build.gradle files
+
+    // Required plugins added to classpath to facilitate pushing to Jcenter/Bintray
+    classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.7.3'
+    classpath 'com.github.dcendents:android-maven-gradle-plugin:2.0'
   }
 }
 
 allprojects {
   repositories {
+    google()
     jcenter()
   }
 }
 
 task clean(type: Delete) {
   delete rootProject.buildDir
+}
+
+ext {
+  targetSdkVersion = 27
+  minSdkVersion = 14
+  compileSdkVersion = targetSdkVersion
+  buildToolsVersion = '27.0.2'
+  supportLibVersion = '27.0.2'
+  googlePlayServicesVersion = '11.8.0'
+
+  // EasyDeviceInfo
+  easyDeviceInfoVersionCode = 25
+  easyDeviceInfoVersionName = "2.4.1"
+  easyDeviceInfoPomUrl = "https://github.com/nisrulz/easydeviceinfo"
+  easyDeviceInfoPomGitUrl = "https://github.com/nisrulz/easydeviceinfo.git"
+  easyDeviceInfoGithubRepo = "nisrulz/easydeviceinfo"
 }

@@ -70,8 +70,7 @@ gradle.properties
 # Mobile Tools for Java (J2ME)
 .mtj.tmp/
 
-# Package Files #
-*.jar
+# Package Files
 *.war
 *.ear
 
@@ -84,3 +83,6 @@ hs_err_pid*
 .DS_Store
 /captures
 **/*.iml
+.project
+org.eclipse.buildship.core.prefs
+.classpath
